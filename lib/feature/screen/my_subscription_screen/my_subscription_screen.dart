@@ -423,8 +423,8 @@ class AdditionalServices extends StatelessWidget {
               child: ServiceCard(
                 title: 'Массажи',
                 icon: Assets.svg.handHeart.path,
-                backgroundColor: Color(0xFFFFF4E0),
-                iconColor: Color(0xFFE8C15E),
+                backgroundColor: Color(0xFFFCEFD0),
+                iconColor: Color(0xFFFCEFD0),
               ),
             ),
             SizedBox(width: 12),
@@ -432,8 +432,8 @@ class AdditionalServices extends StatelessWidget {
               child: ServiceCard(
                 title: 'SPA-процедуры',
                 icon: Assets.svg.lotus.path,
-                backgroundColor: Color(0xFFE8F5E0),
-                iconColor: Color(0xFFACDA3B),
+                backgroundColor: Color(0xFFEAF4D0),
+                iconColor: Color(0xFFEAF4D0),
               ),
             ),
           ],
