@@ -1,0 +1,43 @@
+name: thousand_it_test
+description: "A new Flutter project."
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.10+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+  build_runner: ^2.4.13
+  flutter_gen_runner: ^5.8.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/svg/
+
+# FlutterGen configuration
+flutter_gen:
+  output: lib/gen/
+  line_length: 80
+
+  integrations:
+    flutter_svg: true
+
+  assets:
+    enabled: true
+    outputs:
+      class_name: Assets
+      package_parameter_enabled: false
