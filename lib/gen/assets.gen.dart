@@ -25,11 +25,17 @@ class $AssetsImagesGen {
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
+  /// File path: assets/svg/hand_heart.svg
+  SvgGenImage get handHeart => const SvgGenImage('assets/svg/hand_heart.svg');
+
+  /// File path: assets/svg/lotus.svg
+  SvgGenImage get lotus => const SvgGenImage('assets/svg/lotus.svg');
+
   /// File path: assets/svg/notif.svg
   SvgGenImage get notif => const SvgGenImage('assets/svg/notif.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [notif];
+  List<SvgGenImage> get values => [handHeart, lotus, notif];
 }
 
 class Assets {
