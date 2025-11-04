@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:thousand_it_test/core/theme/app_colors.dart';
 import 'package:thousand_it_test/feature/screen/my_subscription_screen/my_subscription_screen.dart';
 
 void main() {
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: const Color.fromARGB(245, 255, 255, 255),
+        backgroundColor: AppColors.background,
         bottomNavigationBar: BottomNavBar(),
         body: SafeArea(child: MySubscriptionScreen()),
       ),
@@ -32,7 +33,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: AppColors.cardBackground,
       padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
       height: 92,
       child: Row(
@@ -63,7 +64,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     required int index,
   }) {
     final isSelected = _selectedIndex == index;
-    final color = isSelected ? Color(0xFFF5C85C) : Color(0xFF878787);
+    final color = isSelected ? AppColors.primary : AppColors.secondary;
 
     return GestureDetector(
       onTap: () {

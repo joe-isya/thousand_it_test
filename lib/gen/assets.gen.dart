@@ -25,6 +25,20 @@ class $AssetsImagesGen {
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
+  /// File path: assets/svg/Calendar_blank.svg
+  SvgGenImage get calendarBlank =>
+      const SvgGenImage('assets/svg/Calendar_blank.svg');
+
+  /// File path: assets/svg/alarm.svg
+  SvgGenImage get alarm => const SvgGenImage('assets/svg/alarm.svg');
+
+  /// File path: assets/svg/calendar_gold.svg
+  SvgGenImage get calendarGold =>
+      const SvgGenImage('assets/svg/calendar_gold.svg');
+
+  /// File path: assets/svg/gift.svg
+  SvgGenImage get gift => const SvgGenImage('assets/svg/gift.svg');
+
   /// File path: assets/svg/hand_heart.svg
   SvgGenImage get handHeart => const SvgGenImage('assets/svg/hand_heart.svg');
 
@@ -34,12 +48,24 @@ class $AssetsSvgGen {
   /// File path: assets/svg/notif.svg
   SvgGenImage get notif => const SvgGenImage('assets/svg/notif.svg');
 
+  /// File path: assets/svg/tshirt.svg
+  SvgGenImage get tshirt => const SvgGenImage('assets/svg/tshirt.svg');
+
   /// List of all assets
-  List<SvgGenImage> get values => [handHeart, lotus, notif];
+  List<SvgGenImage> get values => [
+        calendarBlank,
+        alarm,
+        calendarGold,
+        gift,
+        handHeart,
+        lotus,
+        notif,
+        tshirt
+      ];
 }
 
-class Assets {
-  Assets._();
+class AppAssets {
+  AppAssets._();
 
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsSvgGen svg = $AssetsSvgGen();

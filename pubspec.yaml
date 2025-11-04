@@ -39,5 +39,5 @@ flutter_gen:
   assets:
     enabled: true
     outputs:
-      class_name: Assets
+      class_name: AppAssets
       package_parameter_enabled: false
