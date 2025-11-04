@@ -1,24 +1,18 @@
 import 'package:flutter/material.dart';
 
-/// Централизованное хранилище всех размеров виджетов приложения
-/// Использует принцип Single Responsibility из SOLID
 class AppDimensions {
-  // Приватный конструктор для предотвращения создания экземпляров
   AppDimensions._();
 
-  // Border radius
   static const double radiusSmall = 12.0;
   static const double radiusMedium = 16.0;
   static const double radiusLarge = 24.0;
   static const double radiusCircle = 100.0;
 
-  // Border radius objects
   static BorderRadius get borderRadiusSmall => BorderRadius.circular(radiusSmall);
   static BorderRadius get borderRadiusMedium => BorderRadius.circular(radiusMedium);
   static BorderRadius get borderRadiusLarge => BorderRadius.circular(radiusLarge);
   static BorderRadius get borderRadiusCircle => BorderRadius.circular(radiusCircle);
 
-  // Icon sizes
   static const double iconSmall = 12.0;
   static const double iconMedium = 20.0;
   static const double iconLarge = 24.0;

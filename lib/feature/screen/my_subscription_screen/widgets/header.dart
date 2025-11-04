@@ -79,7 +79,7 @@ class Header extends StatelessWidget {
                 height: 20,
                 width: 20,
                 colorFilter: ColorFilter.mode(
-                  AppColors.textPrimary,
+                  AppColors.background,
                   BlendMode.srcIn,
                 ),
               ),

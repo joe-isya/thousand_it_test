@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thousand_it_test/core/theme/app_colors.dart';
+import 'package:thousand_it_test/core/widgets/custom_button.dart';
 import 'package:thousand_it_test/gen/assets.gen.dart';
 
 class MyOrders extends StatelessWidget {
@@ -48,116 +49,59 @@ class MyOrders extends StatelessWidget {
             ],
           ),
           SizedBox(height: 24),
-          Row(
-            children: [
-              AppAssets.svg.calendarGold.svg(height: 16, width: 16),
-              SizedBox(width: 8),
-              Text(
-                '14 Октября, 11:30',
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.textPrimary,
-                ),
-              ),
-            ],
+          _getDescription(
+            icon: AppAssets.svg.calendarGold.svg(height: 16, width: 16),
+            text: '14 Октября, 11:30',
           ),
           SizedBox(height: 6),
-
-          Row(
-            children: [
-              AppAssets.svg.alarm.svg(height: 16, width: 16),
-              SizedBox(width: 8),
-              Text(
-                '2 часа',
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.textPrimary,
-                ),
-              ),
-            ],
+          _getDescription(
+            icon: AppAssets.svg.alarm.svg(height: 16, width: 16),
+            text: '2 часа',
           ),
           SizedBox(height: 6),
-          Row(
-            children: [
-              AppAssets.svg.gift.svg(height: 16, width: 16),
-              SizedBox(width: 8),
-              Text(
-                '+ 2 часа в подарок (бассейн, джакузи, хамам)',
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.textPrimary,
-                ),
-              ),
-            ],
+          _getDescription(
+            icon: AppAssets.svg.gift.svg(height: 16, width: 16),
+            text: '+ 2 часа в подарок (бассейн, джакузи, хамам)',
           ),
           SizedBox(height: 6),
-
-          Row(
-            children: [
-              AppAssets.svg.tshirt.svg(height: 16, width: 16),
-              SizedBox(width: 8),
-              Text(
-                'Возьмите купальник и плавки',
-                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
-              ),
-            ],
+          _getDescription(
+            icon: AppAssets.svg.tshirt.svg(height: 16, width: 16),
+            text: 'Возьмите купальник и плавки',
           ),
           SizedBox(height: 12),
           Row(
             children: [
               Expanded(
-                child: SizedBox(
-                  height: 36,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.lightGray,
-                      foregroundColor: AppColors.secondary,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    ),
-                    child: Text(
-                      'Отменить',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
+                child: CustomButton.secondary(
+                  text: 'Отменить',
+                  onPressed: () {},
                 ),
               ),
               SizedBox(width: 8),
-
               Expanded(
-                child: SizedBox(
-                  height: 36,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.primary,
-                      foregroundColor: AppColors.textOnPrimary,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    ),
-                    child: Text(
-                      'QR код',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                ),
+                child: CustomButton.primary(text: 'QR код', onPressed: () {}),
               ),
             ],
           ),
         ],
       ),
+    );
+  }
+
+  Widget _getDescription({required Widget icon, required String text}) {
+    return Row(
+      children: [
+        icon,
+        SizedBox(width: 8),
+        Text(
+          text,
+          style: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+            color: AppColors.textPrimary,
+          ),
+        ),
+      ],
     );
   }
 }

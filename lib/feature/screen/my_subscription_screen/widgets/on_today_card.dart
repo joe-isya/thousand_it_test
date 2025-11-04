@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thousand_it_test/core/theme/app_colors.dart';
+import 'package:thousand_it_test/core/widgets/custom_button.dart';
 
 class OnTodayCard extends StatelessWidget {
   const OnTodayCard({super.key});
@@ -71,23 +72,10 @@ class OnTodayCard extends StatelessWidget {
             ),
           ),
           SizedBox(height: 24),
-          SizedBox(
-            height: 36,
+          CustomButton.primary(
+            text: 'Бронировать',
+            onPressed: () {},
             width: double.infinity,
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primary,
-                foregroundColor: AppColors.textOnPrimary,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
-              child: Text(
-                'Бронировать',
-                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
-              ),
-            ),
           ),
         ],
       ),
