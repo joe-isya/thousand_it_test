@@ -11,7 +11,7 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +29,16 @@ class _BottomNavBarState extends State<BottomNavBar> {
             icon: Icons.calendar_month,
             index: 1,
           ),
-          _getNavigation(title: AppStrings.navQr, icon: Icons.qr_code_rounded, index: 2),
-          _getNavigation(title: AppStrings.navBooking, icon: Icons.note_alt_sharp, index: 3),
+          _getNavigation(
+            title: AppStrings.navQr,
+            icon: Icons.qr_code_rounded,
+            index: 2,
+          ),
+          _getNavigation(
+            title: AppStrings.navBooking,
+            icon: Icons.note_alt_sharp,
+            index: 3,
+          ),
           _getNavigation(
             title: AppStrings.navProfile,
             icon: Icons.person_outline,

@@ -8,10 +8,14 @@ class AppDimensions {
   static const double radiusLarge = 24.0;
   static const double radiusCircle = 100.0;
 
-  static BorderRadius get borderRadiusSmall => BorderRadius.circular(radiusSmall);
-  static BorderRadius get borderRadiusMedium => BorderRadius.circular(radiusMedium);
-  static BorderRadius get borderRadiusLarge => BorderRadius.circular(radiusLarge);
-  static BorderRadius get borderRadiusCircle => BorderRadius.circular(radiusCircle);
+  static BorderRadius get borderRadiusSmall =>
+      BorderRadius.circular(radiusSmall);
+  static BorderRadius get borderRadiusMedium =>
+      BorderRadius.circular(radiusMedium);
+  static BorderRadius get borderRadiusLarge =>
+      BorderRadius.circular(radiusLarge);
+  static BorderRadius get borderRadiusCircle =>
+      BorderRadius.circular(radiusCircle);
 
   static const double iconSmall = 12.0;
   static const double iconMedium = 20.0;

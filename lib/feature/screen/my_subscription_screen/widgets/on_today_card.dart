@@ -59,7 +59,15 @@ class OnTodayCard extends StatelessWidget {
           SizedBox(height: 24),
           CustomButton.primary(
             text: AppStrings.book,
-            onPressed: () {},
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(AppStrings.bookingAvailable),
+                  duration: Duration(seconds: 3),
+                  backgroundColor: AppColors.success,
+                ),
+              );
+            },
             width: double.infinity,
           ),
         ],

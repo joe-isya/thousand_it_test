@@ -15,10 +15,7 @@ class Header extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              AppStrings.subscriptionActive,
-              style: AppTextStyles.caption,
-            ),
+            Text(AppStrings.subscriptionActive, style: AppTextStyles.caption),
             Text(
               AppStrings.locationBaytursynova,
               style: AppTextStyles.bodySmall,
@@ -36,15 +33,9 @@ class Header extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    AppStrings.balanceZero,
-                    style: AppTextStyles.bodySmall,
-                  ),
+                  Text(AppStrings.balanceZero, style: AppTextStyles.bodySmall),
                   SizedBox(width: 4),
-                  Text(
-                    AppStrings.balance,
-                    style: AppTextStyles.bodySmall,
-                  ),
+                  Text(AppStrings.balance, style: AppTextStyles.bodySmall),
                   SizedBox(width: 4),
                   AppAssets.images.tugrik.image(
                     width: 16,
@@ -76,5 +67,3 @@ class Header extends StatelessWidget {
     );
   }
 }
-
-
