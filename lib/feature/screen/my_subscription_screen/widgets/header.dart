@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:thousand_it_test/core/constants/app_strings.dart';
 import 'package:thousand_it_test/core/theme/app_colors.dart';
+import 'package:thousand_it_test/core/theme/app_text_styles.dart';
 import 'package:thousand_it_test/gen/assets.gen.dart';
 
 class Header extends StatelessWidget {
@@ -14,20 +16,12 @@ class Header extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Абонемент активен',
-              style: TextStyle(
-                color: AppColors.textSecondary,
-                fontWeight: FontWeight.w400,
-                fontSize: 12,
-              ),
+              AppStrings.subscriptionActive,
+              style: AppTextStyles.caption,
             ),
             Text(
-              'Байтурсынова / Сатпаева',
-              style: TextStyle(
-                color: AppColors.textPrimary,
-                fontWeight: FontWeight.w500,
-                fontSize: 12,
-              ),
+              AppStrings.locationBaytursynova,
+              style: AppTextStyles.bodySmall,
             ),
           ],
         ),
@@ -43,21 +37,13 @@ class Header extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    '0',
-                    style: TextStyle(
-                      color: AppColors.textPrimary,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 12,
-                    ),
+                    AppStrings.balanceZero,
+                    style: AppTextStyles.bodySmall,
                   ),
                   SizedBox(width: 4),
                   Text(
-                    'баланс',
-                    style: TextStyle(
-                      color: AppColors.textPrimary,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 12,
-                    ),
+                    AppStrings.balance,
+                    style: AppTextStyles.bodySmall,
                   ),
                   SizedBox(width: 4),
                   AppAssets.images.tugrik.image(

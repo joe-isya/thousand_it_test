@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:thousand_it_test/core/constants/app_strings.dart';
 import 'package:thousand_it_test/core/theme/app_colors.dart';
+import 'package:thousand_it_test/core/theme/app_text_styles.dart';
 
 class MySubsCard extends StatelessWidget {
   const MySubsCard({super.key});
@@ -25,21 +27,13 @@ class MySubsCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '3 месяц',
-                    style: TextStyle(
-                      color: AppColors.textOnPrimary,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                    ),
+                    AppStrings.threeMonth,
+                    style: AppTextStyles.bodyMediumOnPrimary,
                   ),
                   SizedBox(height: 4),
                   Text(
-                    'Мой абонемент',
-                    style: TextStyle(
-                      color: AppColors.textOnPrimary,
-                      fontSize: 22,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    AppStrings.mySubscription,
+                    style: AppTextStyles.h1OnPrimary,
                   ),
                 ],
               ),
@@ -50,12 +44,8 @@ class MySubsCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
-                  'QR код',
-                  style: TextStyle(
-                    color: AppColors.textPrimary,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  AppStrings.qrCode,
+                  style: AppTextStyles.buttonLarge,
                 ),
               ),
             ],
@@ -67,20 +57,12 @@ class MySubsCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                'Осталось 6 из 12 посещений',
-                style: TextStyle(
-                  color: AppColors.textOnPrimary,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
+                AppStrings.visitsRemaining,
+                style: AppTextStyles.bodySmallOnPrimary,
               ),
               Text(
-                'до 10.12.2025',
-                style: TextStyle(
-                  color: AppColors.textOnPrimary,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
+                AppStrings.validUntil,
+                style: AppTextStyles.bodySmallOnPrimary,
               ),
             ],
           ),

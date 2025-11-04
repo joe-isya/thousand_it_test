@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:qr_flutter/qr_flutter.dart';
+import 'package:thousand_it_test/core/constants/app_strings.dart';
 import 'package:thousand_it_test/core/theme/app_colors.dart';
+import 'package:thousand_it_test/core/theme/app_text_styles.dart';
 import 'package:thousand_it_test/core/widgets/custom_button.dart';
 import 'package:thousand_it_test/gen/assets.gen.dart';
 
@@ -20,10 +23,7 @@ class MyOrders extends StatelessWidget {
         children: [
           Row(
             children: [
-              Text(
-                '911',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-              ),
+              Text(AppStrings.roomNumber, style: AppTextStyles.h3),
               Spacer(),
               Container(
                 padding: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
@@ -36,10 +36,8 @@ class MyOrders extends StatelessWidget {
                     AppAssets.svg.calendarBlank.svg(),
                     SizedBox(width: 4),
                     Text(
-                      'Заборонирован',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 12,
+                      AppStrings.statusBooked,
+                      style: AppTextStyles.bodySmallRegular.copyWith(
                         color: AppColors.textOnPrimary,
                       ),
                     ),
@@ -51,35 +49,38 @@ class MyOrders extends StatelessWidget {
           SizedBox(height: 24),
           _getDescription(
             icon: AppAssets.svg.calendarGold.svg(height: 16, width: 16),
-            text: '14 Октября, 11:30',
+            text: AppStrings.dateTimeOctober14,
           ),
           SizedBox(height: 6),
           _getDescription(
             icon: AppAssets.svg.alarm.svg(height: 16, width: 16),
-            text: '2 часа',
+            text: AppStrings.twoHours,
           ),
           SizedBox(height: 6),
           _getDescription(
             icon: AppAssets.svg.gift.svg(height: 16, width: 16),
-            text: '+ 2 часа в подарок (бассейн, джакузи, хамам)',
+            text: AppStrings.giftHours,
           ),
           SizedBox(height: 6),
           _getDescription(
             icon: AppAssets.svg.tshirt.svg(height: 16, width: 16),
-            text: 'Возьмите купальник и плавки',
+            text: AppStrings.bringSwimwear,
           ),
           SizedBox(height: 12),
           Row(
             children: [
               Expanded(
                 child: CustomButton.secondary(
-                  text: 'Отменить',
-                  onPressed: () {},
+                  text: AppStrings.cancel,
+                  onPressed: () => _showCancelDialog(context),
                 ),
               ),
               SizedBox(width: 8),
               Expanded(
-                child: CustomButton.primary(text: 'QR код', onPressed: () {}),
+                child: CustomButton.primary(
+                  text: AppStrings.qrCode,
+                  onPressed: () => _showQrCodeDialog(context),
+                ),
               ),
             ],
           ),
@@ -93,15 +94,96 @@ class MyOrders extends StatelessWidget {
       children: [
         icon,
         SizedBox(width: 8),
-        Text(
-          text,
-          style: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w400,
-            color: AppColors.textPrimary,
-          ),
-        ),
+        Text(text, style: AppTextStyles.bodySmallRegular),
       ],
+    );
+  }
+
+  void _showCancelDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: AppColors.cardBackground,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          title: Text(AppStrings.cancelBookingTitle, style: AppTextStyles.h2),
+          content: Text(
+            AppStrings.cancelBookingMessage,
+            style: AppTextStyles.bodySmallRegular,
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text(
+                AppStrings.no,
+                style: AppTextStyles.bodySmall.copyWith(
+                  color: AppColors.secondary,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text(
+                AppStrings.yes,
+                style: AppTextStyles.bodySmall.copyWith(
+                  color: AppColors.primary,
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _showQrCodeDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Dialog(
+          backgroundColor: AppColors.cardBackground,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(24),
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(24),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(AppStrings.qrCode, style: AppTextStyles.h2),
+                SizedBox(height: 24),
+                Container(
+                  width: 250,
+                  height: 250,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(16),
+                    child: QrImageView(
+                      data: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+                      version: QrVersions.auto,
+                      size: 200.0,
+                      backgroundColor: Colors.white,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 24),
+                CustomButton.primary(
+                  text: AppStrings.close,
+                  onPressed: () => Navigator.of(context).pop(),
+                  width: double.infinity,
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }

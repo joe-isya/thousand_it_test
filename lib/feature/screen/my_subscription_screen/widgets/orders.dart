@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:thousand_it_test/core/constants/app_strings.dart';
 import 'package:thousand_it_test/core/theme/app_colors.dart';
+import 'package:thousand_it_test/core/theme/app_text_styles.dart';
 
 class Orders extends StatelessWidget {
   const Orders({super.key});
@@ -8,16 +10,11 @@ class Orders extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(
-          'Ближайшая бронь',
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-        ),
+        Text(AppStrings.upcomingBooking, style: AppTextStyles.h2),
         Spacer(),
         Text(
-          'Смотреть все',
-          style: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w500,
+          AppStrings.viewAll,
+          style: AppTextStyles.bodySmall.copyWith(
             color: AppColors.primaryLight,
           ),
         ),

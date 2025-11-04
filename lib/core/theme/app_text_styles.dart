@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:thousand_it_test/core/theme/app_colors.dart';
 
-/// Централизованное хранилище всех текстовых стилей приложения
-/// Использует принцип Single Responsibility из SOLID
 class AppTextStyles {
-  // Приватный конструктор для предотвращения создания экземпляров
   AppTextStyles._();
 
   // Headings

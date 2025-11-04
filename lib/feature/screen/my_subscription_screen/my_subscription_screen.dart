@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:thousand_it_test/core/theme/app_colors.dart';
+import 'package:thousand_it_test/core/widgets/bottom_nav_bar.dart';
 import 'package:thousand_it_test/feature/screen/my_subscription_screen/widgets/additional_services.dart';
 import 'package:thousand_it_test/feature/screen/my_subscription_screen/widgets/header.dart';
 import 'package:thousand_it_test/feature/screen/my_subscription_screen/widgets/my_orders.dart';
@@ -11,11 +13,17 @@ class MySubscriptionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      child: SingleChildScrollView(
-        physics: AlwaysScrollableScrollPhysics(),
-        child: MySubscriptionScreenContent(),
+    return Scaffold(
+      backgroundColor: AppColors.background,
+      bottomNavigationBar: BottomNavBar(),
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16),
+          child: SingleChildScrollView(
+            physics: AlwaysScrollableScrollPhysics(),
+            child: MySubscriptionScreenContent(),
+          ),
+        ),
       ),
     );
   }

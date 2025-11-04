@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:thousand_it_test/core/constants/app_strings.dart';
 import 'package:thousand_it_test/core/theme/app_colors.dart';
+import 'package:thousand_it_test/core/theme/app_text_styles.dart';
 import 'package:thousand_it_test/core/widgets/custom_button.dart';
 
 class OnTodayCard extends StatelessWidget {
@@ -25,10 +27,7 @@ class OnTodayCard extends StatelessWidget {
                 size: 24,
               ),
               SizedBox(width: 8),
-              Text(
-                'Сегодня в ISLA Spa',
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
-              ),
+              Text(AppStrings.todayAtIslaSpa, style: AppTextStyles.bodyLarge),
             ],
           ),
           Row(
@@ -47,33 +46,19 @@ class OnTodayCard extends StatelessWidget {
                 ),
               ),
               SizedBox(width: 12),
-              Text(
-                '65%',
-                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
-              ),
+              Text(AppStrings.occupancyPercent, style: AppTextStyles.bodySmall),
             ],
           ),
           SizedBox(height: 24),
           Text(
-            'Комфортное время для посещения',
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
-              color: AppColors.textPrimary,
-            ),
+            AppStrings.comfortableTime,
+            style: AppTextStyles.bodySmallRegular,
           ),
           SizedBox(height: 8),
-          Text(
-            'Оптимально с 10:00 до 13:00',
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w500,
-              color: AppColors.textPrimary,
-            ),
-          ),
+          Text(AppStrings.optimalTime, style: AppTextStyles.bodySmall),
           SizedBox(height: 24),
           CustomButton.primary(
-            text: 'Бронировать',
+            text: AppStrings.book,
             onPressed: () {},
             width: double.infinity,
           ),
